@@ -1,0 +1,65 @@
+{
+  "name": "clawstash",
+  "version": "0.2.1",
+  "description": "Encrypted backups for OpenClaw. Set it up once, never think about it again.",
+  "type": "module",
+  "bin": {
+    "clawstash": "./bin/clawstash.mjs"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsx src/cli/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint src/",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "openclaw",
+    "backup",
+    "restic",
+    "encrypted",
+    "r2",
+    "s3",
+    "disaster-recovery",
+    "cli"
+  ],
+  "author": "Alessio Micali (https://github.com/alemicali)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alemicali/clawstash"
+  },
+  "bugs": {
+    "url": "https://github.com/alemicali/clawstash/issues"
+  },
+  "homepage": "https://clawstash.io",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "@types/prompts": "^2.4.9",
+    "tsdown": "^0.9.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

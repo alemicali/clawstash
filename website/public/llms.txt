@@ -1,0 +1,30 @@
+# Clawstash
+
+> Clawstash is an open-source CLI tool that provides encrypted incremental backups for OpenClaw (a personal AI assistant). It backs up ~/.openclaw/ to any S3-compatible storage using AES-256 encryption and block-level deduplication.
+
+Clawstash wraps the restic backup engine, auto-downloading the binary on first run. It includes an interactive setup wizard, background daemon (launchd/systemd), point-in-time restore, and selective restore by category (config, credentials, workspace, sessions, memory, skills, agents, settings).
+
+Key facts:
+- Requires Node >= 18
+- Supports Cloudflare R2, AWS S3, Backblaze B2, MinIO
+- Passphrase stored in OS keychain (macOS Keychain, Linux libsecret)
+- Runs on macOS, Linux, and Windows via WSL2
+- MIT licensed, created by Alessio Micali
+
+## Docs
+
+- [README](https://github.com/alemicali/clawstash/blob/main/README.md): Full documentation including install, quick start, commands, configuration, security, and API
+- [Contributing guide](https://github.com/alemicali/clawstash/blob/main/CONTRIBUTING.md): How to set up the dev environment and submit PRs
+- [Changelog](https://github.com/alemicali/clawstash/blob/main/CHANGELOG.md): Version history and release notes
+
+## Code
+
+- [CLI source](https://github.com/alemicali/clawstash/tree/main/src/cli): Command implementations (setup, backup, restore, snapshots, status, doctor, forget, daemon)
+- [Core modules](https://github.com/alemicali/clawstash/tree/main/src/core): Business logic (config, restic wrapper, keychain, OpenClaw scanner, health checks)
+- [Utilities](https://github.com/alemicali/clawstash/tree/main/src/utils): Platform detection, logger, filesystem helpers
+
+## Optional
+
+- [npm package](https://www.npmjs.com/package/clawstash): Install via npm/pnpm/bun
+- [CI workflow](https://github.com/alemicali/clawstash/blob/main/.github/workflows/ci.yml): GitHub Actions CI configuration
+- [Website source](https://github.com/alemicali/clawstash/tree/main/website): Landing page built with Vite + React
