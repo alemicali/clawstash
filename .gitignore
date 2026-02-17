@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.tgz
+.DS_Store
+.clawstash/
+website/node_modules/
+website/dist/
+website/.vite/
